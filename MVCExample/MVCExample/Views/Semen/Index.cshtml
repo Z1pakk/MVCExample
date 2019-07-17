@@ -1,0 +1,30 @@
+﻿@model MVCExample.Models.Book
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>Привіт динозаврам!</p>
+
+@Html.Action("AddBook", "Semen");
+
+
+
+@ViewBag.Semen
+<h4>@ViewData["Poncho"]</h4>
+@if (Model != null)
+{
+<div class="card">
+    <h2>@Model.Name</h2>
+    <h3>Кількість сторінок: @Model.PageCount</h3>
+    <h3>Автор: @Model.Author</h3>
+    <h3>Назва: @Model.Title</h3>
+</div>
+}
+else
+{
+    <div>
+        <h1>Даних немає</h1>
+    </div>
+}
+
